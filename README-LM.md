@@ -1,10 +1,18 @@
 # Workshop de Big Data con Apache Spark [:)]
 # Trabajo Final: M. Jazmín Montero + José Ignacio López Sáez
 
-<!---
-All this should be 
-commented out
--->
+Se dispone de un dataset con la principal información de los vuelos aterrizados y despegados de los aeropuertos de la República Argentina desde el 01/01/2014 al último trimestre del 2017.
+
+En el mismo (DB_Seminario_Intensivo.txt) se dispone la información de Fecha y Hora de la operación (aterrizaje o despegue), el número de vuelo ("callsign"), la matrícula de la aeronave, un código que identifica el tipo de aeronave, un código que identifica a la aerolínea y el código OACI de origen y el destino.
+
+En otro dataset (DB_Aux_Seminario_Intensivo.txt) se dispone la información del nombre de la aerolínea para cada código (ejemplo: GLO --> Gol Linhas Aéreas)
+
+Como los datos se suelen obtener en forma mensual, el proceso pensado es de tipo batch (a futuro, se podría pensar en un streaming, pero actualmente no se dispone de dicha tecnología en todos los aeródromos del país).
+El objetivo final será poder levantar y procesar el dataset primario utilizando Spark, vincularlo con el auxiliar para obtener el nombre completo de la aerolínea y, finalmente, usando Superset, realizar los principales gráficos que describan la actividad aérea en el país.
+
+Se tomó como referencia principal el código fuente (EtlSteps.scala) del proyecto us-stocks-analysis presentado en clase en la semana del 21/11/2017 en el ITBA en el marco del Seminario Intensivo de Tópicos Avanzados en Datos Complejo:
+
+https://github.com/arjones/bigdata-workshop-es/blob/master/code/us-stock-analysis/src/main/scala/es/arjon/EtlSteps.scala
 
 ## Infrastructura
 El workshop simula una instalacion de produccion utilizando container de Docker.
